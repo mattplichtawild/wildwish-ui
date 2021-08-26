@@ -1,38 +1,34 @@
+// Dependency Imports
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom';
+
+// Stylesheet Imports
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-dom';
-import CardExampleCard from './WishCard';
+import logo from './logo.svg';
+
+// Page Imports
 import Home from './pages/Home'
+import AnimalIndex from './pages/AnimalsIndex';
+import DonationIndex from './pages/DonationsIndex';
+import WishDetail from './pages/WishDetail';
+import UserDetail from './pages/UserDetail';
+import AnimalDetail from './pages/AnimalDetail';
 
 const API_URL = 'http://localhost:8000'
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     <Router>
       {/* <NavBar /> */}
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/animals" component={CardExampleCard}/>
-        {/* <Route path="/animals/:id" component={AnimalDetail} />
+        <Route exact path="/animals" component={AnimalIndex}/>
+        <Route path="/animals/:id" component={AnimalDetail} />
         <Route exact path="/donations" component={DonationIndex} />
-        <Route path="/wishes/:id" component={WishDetail} /> */}
+        <Route path="/wishes/:id" component={WishDetail} />
+        <Route exact path="/account" component={UserDetail} />
       </Switch>
     </Router>
     </div>
