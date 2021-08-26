@@ -1,6 +1,6 @@
 import React from 'react'
-// import Landing from './Landing';
-// import AnimalSelectTabs from './AnimalSelectTabs'
+import Landing from '../components/Landing'
+import AnimalSelectTabs from '../components/AnimalSelectTabs'
 
 
 // Render Landing only if there is no current session and unmount as soon as it is no longer in view
@@ -10,9 +10,8 @@ export default function Home() {
 
     return (
         <>
-        {/* <Landing />
-        <AnimalSelectTabs /> */}
-        <h1>This is the home page</h1>
+        <Landing />
+        <AnimalSelectTabs />
         </>
     )
 }
