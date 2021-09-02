@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, useParams } from 'react-router-
 
 // Stylesheet Imports
 import './App.css';
-import 'semantic-ui-css/semantic.min.css'
 import logo from './logo.svg';
 
 // Page Imports
