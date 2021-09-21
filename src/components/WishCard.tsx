@@ -5,7 +5,7 @@ type animal = {
     id: number,
     name: string,
     species: string,
-    zoo: object,
+    zoo: string,
     images: object,
 }
 
@@ -21,8 +21,8 @@ export default function WishCard(props: WishProps) {
         <Card fluid>
             <Image src='https://wildwishdev.s3.amazonaws.com/media/shirkahntest_TKwHCah.jpg' />
             <Card.Content>
-                <Card.Header></Card.Header>
-                <Card.Meta></Card.Meta>
+                <Card.Header>{props.animal.name}</Card.Header>
+                <Card.Meta>{props.animal.zoo}</Card.Meta>
             </Card.Content>
         </Card>
     )
