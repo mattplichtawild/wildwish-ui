@@ -19,7 +19,7 @@ export default class WishCarousel extends Component {
 
 
     componentDidMount() {
-        const fetchData = (position) => {
+        const fetchData = () => {
             axios
             .get(rootURL + 'wishes/' + this.props.url)
             
