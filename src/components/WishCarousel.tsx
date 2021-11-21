@@ -5,6 +5,8 @@ import axios from "axios";
 
 import { CircularProgress } from '@material-ui/core';
 
+const rootURL = "http://127.0.0.1/"
+
 export default class WishCarousel extends Component {
     constructor(props) {
         super(props);
@@ -15,12 +17,13 @@ export default class WishCarousel extends Component {
         };
     }
 
-    
 
     componentDidMount() {
         const fetchData = (position) => {
             axios
-            .get('wishes/' + this.props.url)
+            .get(rootURL + 'wishes/' + this.props.url)
+            
+            // What TYPE should resp and data be?
             .then(resp => {
                 if (resp.status > 400) {
                     return this.setState( () => {
@@ -62,7 +65,7 @@ export default class WishCarousel extends Component {
             );
             }
         } else {
-            
+
             // TODO: Change to component from semantic UI or create one
             return <CircularProgress />
         }
