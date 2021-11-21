@@ -1,9 +1,9 @@
 import React, { Component, useEffect } from 'react'
 import WishList from "./WishList"
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
 
-import { CircularProgress } from '@material-ui/core';
+// import { CircularProgress } from '@material-ui/core';
 
 const rootURL = "http://127.0.0.1/"
 
@@ -67,7 +67,8 @@ export default class WishCarousel extends Component {
         } else {
 
             // TODO: Change to component from semantic UI or create one
-            return <CircularProgress />
+            // return <CircularProgress />
+            return <h1>Loading</h1>
         }
     }
 }
