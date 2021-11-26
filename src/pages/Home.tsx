@@ -1,6 +1,6 @@
 import React from 'react'
 import Landing from '../components/Landing'
-import AnimalSelectTabs from '../components/AnimalSelectTabs'
+import WishCarousel from '../components/WishCarousel'
 
 
 // Render Landing only if there is no current session and unmount as soon as it is no longer in view
@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <>
         <Landing />
-        <AnimalSelectTabs />
+        <WishCarousel url='featured' />
         </>
     )
 }
