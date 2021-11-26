@@ -1,9 +1,6 @@
 import React, { Component, useEffect } from 'react'
 import WishList from "./WishList"
-// import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
-
-// import { CircularProgress } from '@material-ui/core';
 
 const rootURL = "http://127.0.0.1/"
 
