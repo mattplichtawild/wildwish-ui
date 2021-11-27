@@ -2,7 +2,7 @@ import React, { Component, useEffect } from 'react'
 import WishList from "./WishList"
 import axios from "axios";
 
-const rootURL = "http://127.0.0.1/"
+const rootURL = "http://127.0.0.1:8000/"
 
 export default class WishCarousel extends Component {
     constructor(props) {
@@ -28,7 +28,6 @@ export default class WishCarousel extends Component {
                     })
                 }
                 console.log(resp)
-                // console.log(position)
                 return resp.data;
             })
             .then(data => {
