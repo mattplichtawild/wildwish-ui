@@ -10,19 +10,22 @@ type animal = {
 }
 
 interface WishProps {
-    id: number
-    animal: animal, 
-    active: boolean
+    data: {
+        id: number
+        animal: animal, 
+        active: boolean
+    }
 } 
 
 export default function WishCard(props: WishProps) {
 
+    console.log(props)
     return(
         <Card fluid>
             <Image src='https://wildwishdev.s3.amazonaws.com/media/shirkahntest_TKwHCah.jpg' />
             <Card.Content>
-                <Card.Header>{props.animal.name}</Card.Header>
-                <Card.Meta>{props.animal.zoo}</Card.Meta>
+                <Card.Header>{props.data.animal.name}</Card.Header>
+                {/* <Card.Meta>{props.data.animal.zoo}</Card.Meta> */}
             </Card.Content>
         </Card>
     )
