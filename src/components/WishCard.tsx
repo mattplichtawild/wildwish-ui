@@ -1,12 +1,16 @@
 import React from 'react'
 import { Container, Card, Image } from 'semantic-ui-react'
 
+type image = {
+    upload: string
+}
+
 type animal = {
     id: number,
     name: string,
     species: string,
     zoo: string,
-    images: object,
+    images: Array<image>,
 }
 
 interface WishProps {
@@ -19,13 +23,14 @@ interface WishProps {
 
 export default function WishCard(props: WishProps) {
 
-    console.log(props)
+    // console.log(props)
     return(
         <Card fluid>
-            <Image src='https://wildwishdev.s3.amazonaws.com/media/shirkahntest_TKwHCah.jpg' />
+            {/* TODO: Rewrite to use 'avatar' attribute on animal when API is reformatted to correctly provide that */}
+            <Image src={props.data.animal.images[0].upload} />
             <Card.Content>
                 <Card.Header>{props.data.animal.name}</Card.Header>
-                {/* <Card.Meta>{props.data.animal.zoo}</Card.Meta> */}
+                <Card.Meta>{props.data.animal.zoo}</Card.Meta>
             </Card.Content>
         </Card>
     )
