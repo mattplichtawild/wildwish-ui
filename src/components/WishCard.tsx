@@ -17,17 +17,17 @@ interface WishProps {
     data: {
         id: number
         animal: animal, 
-        active: boolean
+        active: boolean,
+        images: Array<image>
     }
 } 
 
 export default function WishCard(props: WishProps) {
 
-    // console.log(props)
     return(
         <Card fluid>
             {/* TODO: Rewrite to use 'avatar' attribute on animal when API is reformatted to correctly provide that */}
-            <Image src={props.data.animal.images[0].upload} />
+            <Image src={props.data.animal.images[0].upload} fluid/>
             <Card.Content>
                 <Card.Header>{props.data.animal.name}</Card.Header>
                 <Card.Meta>{props.data.animal.zoo}</Card.Meta>
