@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal, Button, Header, Image } from 'semantic-ui-react'
+import DonateForm from './DonateForm';
 
 // import Modal from '@material-ui/core/Modal'
 // import { makeStyles } from '@material-ui/core/styles';
@@ -31,31 +32,28 @@ export default function DonateModal(props) {
             open={open}
             trigger={<Button>Donate</Button>}
         >
-            <Modal.Header>Select a Photo</Modal.Header>
-            <Modal.Content image>
+            <Modal.Header>Donate</Modal.Header>
+            <Modal.Content >
                 
-                <Modal.Description>
+                {/* <Modal.Description>
                     <Header>Default Profile Image</Header>
                     <p>
                     We've found the following gravatar image associated with your e-mail
                     address.
                     </p>
                     <p>Is it okay to use this photo?</p>
-                </Modal.Description>
+                </Modal.Description> */}
+                <DonateForm />
             </Modal.Content>
             <Modal.Actions>
-                
                 <Button
-                    // content="Donate" 
-                    // color='green'
-                    // labelPosition='right'
-                    // icon='check'
                     onClick={() => setOpen(false)}
                     positive
                 >
                     Donate ${props.amount}
                 </Button>
             </Modal.Actions>
+            
         </Modal>
     )
 }
