@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Input } from 'semantic-ui-react'
+import DonateModal from './DonateModal'
 
 export default function DonateBox() {
 
@@ -20,7 +21,6 @@ export default function DonateBox() {
 
     return (
         <>
-        <a>Donate Box</a>
         <Button icon='plus' onClick={increaseAmount}/>
         <Input 
             id='amount'
@@ -35,6 +35,7 @@ export default function DonateBox() {
             // inputComponent='number'
         />
         <Button icon='minus' onClick={decreaseAmount}/>
+        <DonateModal amount={amount}/>
         </>
     )
 }

@@ -29,11 +29,11 @@ export default function DonateModal(props) {
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}
             open={open}
-            trigger={<Button>Show Modal</Button>}
+            trigger={<Button>Donate</Button>}
         >
             <Modal.Header>Select a Photo</Modal.Header>
             <Modal.Content image>
-                <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' wrapped />
+                
                 <Modal.Description>
                     <Header>Default Profile Image</Header>
                     <p>
@@ -44,16 +44,17 @@ export default function DonateModal(props) {
                 </Modal.Description>
             </Modal.Content>
             <Modal.Actions>
-                <Button color='black' onClick={() => setOpen(false)}>
-                    Nope
-                </Button>
+                
                 <Button
-                    content="Yep, that's me"
-                    labelPosition='right'
-                    icon='checkmark'
+                    // content="Donate" 
+                    // color='green'
+                    // labelPosition='right'
+                    // icon='check'
                     onClick={() => setOpen(false)}
                     positive
-                />
+                >
+                    Donate ${props.amount}
+                </Button>
             </Modal.Actions>
         </Modal>
     )
