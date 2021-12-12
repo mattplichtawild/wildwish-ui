@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Card, Image } from 'semantic-ui-react'
+import { Container, Card, Image, Button, Icon } from 'semantic-ui-react'
 import WishCardIcons from './WishCardIcons'
 import DonateBox from './DonateBox'
 import CardActions from './CardActions'
@@ -27,12 +27,18 @@ interface WishProps {
 
 export default function WishCard(props: WishProps) {
 
+    const [state, setState] = React.useState( {liked: false} )
+
     return(
         <Card fluid>
             {/* TODO: Rewrite to use 'avatar' attribute on animal when API is reformatted to correctly provide that */}
             <Image src={props.data.animal.images[0].upload} fluid/>
 
-            <CardActions active={props.data.active} />
+            {/* card actions */}
+            <Button icon='share alternate' />
+            <Button icon={state.liked ? 'heart' : 'heart outline'} onClick={ () => setState({liked: !state.liked}) }/>
+            
+            {state.liked ? <DonateBox /> : ''}
 
             <Card.Content>
                 <Card.Header>{props.data.animal.name}</Card.Header>
