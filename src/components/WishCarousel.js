@@ -17,8 +17,17 @@ export default class WishCarousel extends Component {
 
     componentDidMount() {
         const fetchData = () => {
-            axios
-            .get(rootURL + 'wishes/' + this.props.url)
+            // axios.get(rootURL + 'wishes/' + this.props.url)
+
+            axios(rootURL + 'wishes/' + this.props.url, {
+                method: 'GET',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    // 'Authorization': key,
+                    withCredentials: false,
+                    mode: 'no-cors',
+                }})
             
             // What TYPE should resp and data be?
             .then(resp => {
@@ -30,6 +39,7 @@ export default class WishCarousel extends Component {
                 console.log(resp)
                 return resp.data;
             })
+            .catch(resp => {console.log(resp)})
             .then(data => {
                 this.setState(() => {
                     return {
@@ -50,7 +60,7 @@ export default class WishCarousel extends Component {
     };
 
     render() {
-        if (this.state.data.length) {
+        if (this.state.data != undefined && this.state.data.length) {
             if (this.props.url === 'nearby' && !("geolocation" in navigator)) {
                 return (
                     <h1>Turn on location please</h1>
