@@ -1,8 +1,6 @@
 import React from 'react'
 import { Container, Card, Image, Button, Icon } from 'semantic-ui-react'
-import WishCardIcons from './WishCardIcons'
 import DonateBox from './DonateBox'
-import CardActions from './CardActions'
 
 type image = {  
     upload: string
