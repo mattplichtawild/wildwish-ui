@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useReducer } from "react";
+import { Form } from 'semantic-ui-react'
 // import Cookies from 'js-cookie';
 
 // Set header in POST request to include csrf token
@@ -15,8 +16,22 @@ function reducer(state, {field, value}) {
     };
 };
 
-// Donate form should have props so :wishId can be inherited from list item key
 function DonateForm(props) {
+
+    return (
+        <Form>
+            <Form.Group widths='equal'>
+                <Form.Input fluid label='First name' placeholder='First name' />
+                <Form.Input fluid label='Last name' placeholder='Last name' />
+            </Form.Group>
+            <Form.Group widths='equal'>
+
+            </Form.Group>
+        </Form>
+    )
+}
+// Donate form should have props so :wishId can be inherited from list item key
+function LegacyDonateForm(props) {
     // let csrftoken = getCookie('csrftoken');
     // let csrfToken = Cookies.get('csrftoken');
 
@@ -67,7 +82,7 @@ function DonateForm(props) {
 
     return (
         <form method="post" action="/donations/" onSubmit={handleSubmit}>
-        <input type="hidden" name="csrfmiddlewaretoken" value={csrfToken} />
+        {/* <input type="hidden" name="csrfmiddlewaretoken" value={csrfToken} /> */}
         <input type="hidden" name="wish_id" value={wish_id} />
         <label htmlFor="first_name">First Name</label>
         <input
