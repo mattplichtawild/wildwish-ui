@@ -131,7 +131,7 @@ function AnimalCard(props) {
 
 
     return (
-
+        <h1>Animal Card</h1>
     )
 
     // Old component written using Material UI
