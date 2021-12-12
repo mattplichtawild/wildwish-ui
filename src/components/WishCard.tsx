@@ -1,7 +1,10 @@
 import React from 'react'
 import { Container, Card, Image } from 'semantic-ui-react'
+import WishCardIcons from './WishCardIcons'
+import DonateBox from './DonateBox'
+import CardActions from './CardActions'
 
-type image = {
+type image = {  
     upload: string
 }
 
@@ -28,6 +31,9 @@ export default function WishCard(props: WishProps) {
         <Card fluid>
             {/* TODO: Rewrite to use 'avatar' attribute on animal when API is reformatted to correctly provide that */}
             <Image src={props.data.animal.images[0].upload} fluid/>
+
+            <CardActions active={props.data.active} />
+
             <Card.Content>
                 <Card.Header>{props.data.animal.name}</Card.Header>
                 <Card.Meta>{props.data.animal.zoo}</Card.Meta>
