@@ -10,7 +10,7 @@ export default function Home() {
 
     return (
         <>
-        <Landing />
+        {/* <Landing /> */}
         <WishCarousel url='featured' />
         </>
     )

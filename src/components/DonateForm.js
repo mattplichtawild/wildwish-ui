@@ -25,8 +25,13 @@ function DonateForm(props) {
                 <Form.Input fluid label='Last name' placeholder='Last name' />
             </Form.Group>
             <Form.Group widths='equal'>
+                <Form.Input fluid label='Email' placeholder='Email' />
+                <Form.Input fluid label="Instagram" placeholder="username (We'll tag you when the animal gets their toy)" icon='at' iconPosition='left'/>
+            </Form.Group>
+            <Form.Group widths='equal'>
 
             </Form.Group>
+            
         </Form>
     )
 }

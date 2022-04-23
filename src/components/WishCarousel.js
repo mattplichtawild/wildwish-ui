@@ -17,17 +17,17 @@ export default class WishCarousel extends Component {
 
     componentDidMount() {
         const fetchData = () => {
-            // axios.get(rootURL + 'wishes/' + this.props.url)
+            axios.get(rootURL + 'wishes/' + this.props.url)
 
-            axios(rootURL + 'wishes/' + this.props.url, {
-                method: 'GET',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                    // 'Authorization': key,
-                    withCredentials: false,
-                    mode: 'no-cors',
-                }})
+            // axios.get(rootURL + 'wishes/' + this.props.url, {
+            //     method: 'get',
+            //     headers: {
+            //         'Access-Control-Allow-Origin': '*',
+            //         'Content-Type': 'application/json',
+            //         // 'Authorization': key,
+            //         withCredentials: true,
+            //         // mode: 'no-cors',
+            //     }})
             
             // What TYPE should resp and data be?
             .then(resp => {
